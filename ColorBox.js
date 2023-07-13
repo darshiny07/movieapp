@@ -10,7 +10,6 @@ export function ColorBox() {
   let styles = {
     background: color,
     fontSize: "20px",
-    // marginLeft: "50px",
     height: "50px",
     width: "200px",
   };

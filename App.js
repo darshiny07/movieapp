@@ -8,11 +8,9 @@ import Icon from '@mui/material/Icon';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Typography from '@mui/material/Typography';
 import { Welcome } from './Welcome';
 import Trailer from './Trailer';
+
 // Route import
 import {
   createBrowserRouter,
@@ -118,16 +116,21 @@ function App(){
       <AppBar position="static">
         <Toolbar>
         <Button color='inherit' onClick={() => Navigate("/")}>  Home </Button>
+        <Button color="inherit" onClick={()=> Navigate("/addmovie")}>Movie</Button>
         <Button color="inherit" onClick={()=> Navigate("/trailer")}>Trailer</Button>
           <Button color="inherit" onClick={()=> Navigate("/colorbox")}>colorbox</Button>
+          
         </Toolbar>
       </AppBar>
     </Box>
+
+
            <Routes>
   <Route path="/" element={<Welcome/>}/>
   <Route path="/colorbox" element={<ColorBox/>} />
-  <Route path="/movieAdd" element={<AddMovie/>} />
+  <Route path="/addmovie" element={<AddMovie/>} />
   <Route path="/trailer" element={<Trailer/>} />
+
 </Routes>
 
 
@@ -174,7 +177,9 @@ function AddMovie(){
       rating: rating,
       summary: summary
     }
-    setUser([...user,newFilm]) }}></Button>
+    setUser([...user,newFilm]) }}>
+      
+    </Button>
     
   <div className="mv-list">
           {/* maping with movie list */}
@@ -186,13 +191,7 @@ function AddMovie(){
    }
   
   
-// function Welcome(){
-//   return(
-//     <div>
-//       <h1>Welcome,Click any one of the below</h1>
-//     </div>
-//   )
-// }
+
 
 
 
@@ -243,7 +242,7 @@ const navigate = useNavigate();
       <Button onClick={()=>setDisplay(!display)} >Read more.. </Button > <Icon color="primary">add_circle</Icon> </Stack>
       <p className="mv-summary"style={sumry}>{movieList.summary}</p>
 
-      <Testing/>
+     
     </div>
   )
 }
