@@ -5,7 +5,14 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Icon from '@mui/material/Icon';
-
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Typography from '@mui/material/Typography';
+import { Welcome } from './Welcome';
+import Trailer from './Trailer';
 // Route import
 import {
   createBrowserRouter,
@@ -14,6 +21,7 @@ import {
   Route,
   NavLink,
   Link,
+  Navigate,
   useNavigate,
 } from "react-router-dom";
 import { ColorBox } from './ColorBox';
@@ -102,17 +110,29 @@ import { ColorBox } from './ColorBox';
 
 // adding more films
 function App(){
+  const Navigate = useNavigate();
   return(
 
     <div className="App">
+      <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+        <Button color='inherit' onClick={() => Navigate("/")}>  Home </Button>
+        <Button color="inherit" onClick={()=> Navigate("/trailer")}>Trailer</Button>
+          <Button color="inherit" onClick={()=> Navigate("/colorbox")}>colorbox</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
            <Routes>
   <Route path="/" element={<Welcome/>}/>
   <Route path="/colorbox" element={<ColorBox/>} />
   <Route path="/movieAdd" element={<AddMovie/>} />
+  <Route path="/trailer" element={<Trailer/>} />
 </Routes>
 
 
-  <li>
+
+  {/* <li>
   <NavLink to="/">HomePage</NavLink>
   </li>
   <li>
@@ -120,7 +140,7 @@ function App(){
   </li>
   <li> 
         <NavLink to="/colorbox"> colorbox app </NavLink>
-          </li>
+          </li> */}
           </div>
           )
 }
@@ -166,13 +186,13 @@ function AddMovie(){
    }
   
   
-function Welcome(){
-  return(
-    <div>
-      <h1>Welcome,Click any one of the below</h1>
-    </div>
-  )
-}
+// function Welcome(){
+//   return(
+//     <div>
+//       <h1>Welcome,Click any one of the below</h1>
+//     </div>
+//   )
+// }
 
 
 
