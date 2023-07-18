@@ -10,6 +10,7 @@
 .mv-display{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .mv-container{
   width: 350px;
@@ -20,25 +21,22 @@
 .mv-list{
   display: flex;
    flex-wrap:wrap ;
+   /* gap: 20px; */
+   flex-wrap: wrap;
+   justify-content: space-between;
 }
 
 .btn{
- 
-  width:80px;
-  height: 50px;
+  width:70px;
+  height: 45px;
   border-radius: 15px;
-  gap:50px;
-  font-size:30px;
-  border: none;
-
+  gap:30px;
+  font-size: 20px;
 }
 
 .new-mv-adding{
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 20px;
-  padding: 30px;
-  gap:8px;
 }
 

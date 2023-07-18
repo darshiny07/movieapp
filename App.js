@@ -4,12 +4,13 @@ import {useState} from "react"
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
-import Icon from '@mui/material/Icon';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Welcome } from './Welcome';
 import Trailer from './Trailer';
+
+
 
 // Route import
 import {
@@ -23,6 +24,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { ColorBox } from './ColorBox';
+import Counter from './Counter';
 
 // first component
 
@@ -36,6 +38,8 @@ import { ColorBox } from './ColorBox';
       rating: 8.1,
       summary:
       "Members of a black ops team must track and eliminate a gang of masked murderers.",
+      trailer:
+      <a href='https://www.youtube.com/watch?v=OKBMCL-frPU&pp=ygUOdmlrcmFtIHRyYWlsZXI%3D'>Trailer</a>
       },
       {
       name: "June",
@@ -44,7 +48,8 @@ import { ColorBox } from './ColorBox';
       rating: 7.4,
       summary:
       "June, a teenager, believes that there is nothing remarkable about her. She experiences adolescent crushes, handles heartbreaks and fights insecurities as she grows into a mature and confident woman.",
-      
+      trailer:
+      <a href='https://www.youtube.com/watch?v=kP4vEzIv2lI&pp=ygUcanVuZSBtYWxheWFsYW0gbW92aWUgdHJhaWxlcg%3D%3D '>Trailer</a>
       },
       {
       name: "Iron man 2",
@@ -111,7 +116,8 @@ function App(){
   const Navigate = useNavigate();
   return(
 
-    <div className="App">
+    <div >
+       
       <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
@@ -154,39 +160,43 @@ function AddMovie(){
   const [poster,setPoster] = useState("");
   const[rating,setRating] = useState("");
   const[summary,setSummary] = useState("");
+  const [trailer, setTrailer] = useState("");
   const [user,setUser] = useState(movieAdd);
-  
+ 
   return (
          
   <div className="App">
     
   <div className='new-mv-adding'>
-  <TextField id="standard-basic" label="Movie Name" variant="standard" className='new-mv-name' placeholder='Movie name' onChange={(event) => setName(event.target.value)}/>
+  <TextField id="standard-basic" label="Movie Name" variant="standard" placeholder='Movie name' onChange={(event) => setName(event.target.value)}/>
   {/* <input className='new-mv-name' placeholder='Movie name' onChange={(event) => setName(event.target.value)}/> */}
-  <TextField id="standard-basic" label="Movie url" variant="standard" className='new-mv-poster' placeholder='Paste the url' onChange={(event) => setPoster(event.target.value)}/>
+  <TextField id="standard-basic" label="Movie url" variant="standard"  placeholder='Paste the url' onChange={(event) => setPoster(event.target.value)}/>
   
-  <TextField id="standard-basic" label="Rating" variant="standard" className='new-mv-rating' placeholder='give movie rating' onChange={(event) => setRating(event.target.value)}/>
-  
-  <TextField id="standard-basic" label="Summary" variant="standard" className='new-mv-summary' placeholder='movie summary' onChange={(event) => setSummary(event.target.value)}/>
-  
+  <TextField id="standard-basic" label="Rating" variant="standard"  placeholder='give movie rating' onChange={(event) => setRating(event.target.value)}/>
+ 
+  <TextField id="standard-basic" label="Summary" variant="standard"  placeholder='movie summary' onChange={(event) => setSummary(event.target.value)}/>
+  <TextField id="standard-basic" label="trailer " variant="standard"  placeholder='movie trailer' onChange={(event) => setTrailer(event.target.value)}/>
+  <br />
       <Button variant="contained"onClick={()=>
   {
     const newFilm ={
       name: name,
       poster: poster,
       rating: rating,
-      summary: summary
+      summary: summary,
+      trailer: trailer
     }
     setUser([...user,newFilm]) }}>
-      
+      Submit
     </Button>
-    
+    </div>
   <div className="mv-list">
           {/* maping with movie list */}
    {movieAdd.map(item => <Movie movieList={item}/>)}
+  
    </div>
      </div>
-     </div>
+    
     );
    }
   
@@ -196,18 +206,9 @@ function AddMovie(){
 
 
 // like dislike button
-function Testing() {
-  const [like, setLike] = useState(0);
-  const [dislike, setDisLike] = useState(0);
-  return (
-    <div>
 
-      <button className="btn"onClick={() => setLike(like + 1)}>{like}</button> 
-      <button className="btn" onClick={() => setDisLike(dislike + 1)}>{dislike} </button>
-    </div>
-  );
-}
 
+   
 // second component
 function Movie({movieList}){
 // let movieList ={
@@ -230,6 +231,10 @@ let sumry={
 // rating color change
 let styles={color: movieList.rating> 7 ?"green":"red"};
 // rating color change
+ <div>
+      
+ </div>
+
 const navigate = useNavigate();
   return(
     <div className="mv-container">
@@ -239,12 +244,16 @@ const navigate = useNavigate();
      <p className="mv-rating" style={styles}>{movieList.rating}⭐ </p></div>
       <hr></hr>
       <Stack direction="row" spacing={2}>
-      <Button onClick={()=>setDisplay(!display)} >Read more.. </Button > <Icon color="primary">add_circle</Icon> </Stack>
+      <Button onClick={()=>setDisplay(!display)} >Read more.. </Button >  </Stack>
       <p className="mv-summary"style={sumry}>{movieList.summary}</p>
-
-     
+      <Button className="mv-trailer">{movieList.trailer} Trailer </Button >  
+      
+      <Counter/>
     </div>
+    
   )
+  
+
 }
 
 

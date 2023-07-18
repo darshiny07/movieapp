@@ -1,0 +1,10 @@
+.Counter{
+    
+    height: 40px;
+    width: 70px;
+ border: none;
+ border-radius: 15px;
+    font-size: 15px;
+    gap: 20px 5px;
+    gap: 20px;
+}
