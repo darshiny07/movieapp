@@ -40,3 +40,18 @@
   width: 400px;
 }
 
+.poster{
+ /* box-shadow: -1px 0 10px #000000; */
+ box-shadow: 10px 11px 20px 5px black;
+ background-color: black;
+ justify-content: center;
+  margin: 15px;
+width: 320px;
+height: 420px;
+align-items: center;
+}
+
+.poster:hover{
+transform: scale(1.1);
+z-index: 0.5px;
+}

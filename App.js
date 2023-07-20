@@ -34,12 +34,13 @@ import Counter from './Counter';
       [{
       name: "Vikram",
       poster:
+     
       "https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg",
       rating: 8.1,
       summary:
       "Members of a black ops team must track and eliminate a gang of masked murderers.",
       trailer:
-      <a href='https://www.youtube.com/watch?v=OKBMCL-frPU&pp=ygUOdmlrcmFtIHRyYWlsZXI%3D'>Trailer</a>
+      <a href='https://www.youtube.com/watch?v=OKBMCL-frPU&pp=ygUOdmlrcmFtIHRyYWlsZXI%3D'>Watch trailer</a>
       },
       {
       name: "June",
@@ -238,16 +239,18 @@ let styles={color: movieList.rating> 7 ?"green":"red"};
 const navigate = useNavigate();
   return(
     <div className="mv-container">
+      <div className='poster'>
       <img className="mv-poster"src={movieList.poster} alt={movieList.poster}></img>
+      </div>
       <div className="mv-display">
       <h1 className="mv-name" >{movieList.name}</h1> 
-     <p className="mv-rating" style={styles}>{movieList.rating}⭐ </p></div>
+     <p className="mv-rating"  style={styles}>{movieList.rating}⭐ </p></div>
       <hr></hr>
       <Stack direction="row" spacing={2}>
       <Button onClick={()=>setDisplay(!display)} >Read more.. </Button >  </Stack>
       <p className="mv-summary"style={sumry}>{movieList.summary}</p>
-      <Button className="mv-trailer">{movieList.trailer} Trailer </Button >  
-      
+      {/* <Button className="mv-trailer" >{movieList.trailer} Trailer </Button >   */}
+      <p className="mv-summary">{movieList.trailer}</p>
       <Counter/>
     </div>
     
