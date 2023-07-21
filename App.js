@@ -8,7 +8,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Welcome } from './Welcome';
-import Trailer from './Trailer';
+// import Trailer from './Trailer';
 
 
 
@@ -59,7 +59,8 @@ import Counter from './Counter';
       rating: 7,
       summary:
       "With the world now aware that he is Iron Man, billionaire inventor Tony Stark (Robert Downey Jr.) faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts (Gwyneth Paltrow) and Rhodes (Don Cheadle) by his side, Tony must forge new alliances and confront a powerful new enemy.",
-      
+      trailer:
+      <a href='https://www.youtube.com/watch?v=wKtcmiifycU&pp=ygUSaXJvbiBtYW4gMiB0cmFpbGVy'> Watch Trailer</a>
       },
       {
       name: "No Country for Old Men",
@@ -68,7 +69,9 @@ import Counter from './Counter';
       rating: 8.1,
       summary:
       "A hunter's life takes a drastic turn when he discovers two million dollars while strolling through the aftermath of a drug deal. He is then pursued by a psychopathic killer who wants the money.",
-      },
+      trailer:
+      <a href='https://www.youtube.com/watch?v=38A__WT3-o0&pp=ygUebm8gY291bnRyeSBmb3Igb2xkIG1lbiB0cmFpbGVy'> Watch Trailer</a>
+    },
       {
       name: "Jai Bhim",
       poster:
@@ -76,6 +79,8 @@ import Counter from './Counter';
       summary:
       "A tribal woman and a righteous lawyer battle in court to unravel the mystery around the disappearance of her husband, who was picked up the police on a false case",
       rating: 8.8,
+      trailer:
+      <a href='https://youtu.be/Gc6dEDnL8JA'> Watch Trailer</a>
       
       },
       {
@@ -85,7 +90,8 @@ import Counter from './Counter';
       "Marvel's The Avengers (classified under the name Marvel Avengers Assemble in the United Kingdom and Ireland), or simply The Avengers, is\n a 2012 American superhero film based on the Marvel Comics superhero team\n of the same name.",
       poster:
       "https://terrigen-cdn-dev.marvel.com/content/prod/1x/avengersendgame_lob_crd_05.jpg",
-      
+      trailer:
+      <a href='https://www.youtube.com/watch?v=eOrNdBpGMv8&pp=ygUUdGhlIGF2ZW5nZXJzIHRyYWlsZXI%3D'> Watch Trailer</a>
       },
       {
       name: "Interstellar",
@@ -93,7 +99,8 @@ import Counter from './Counter';
       rating: 8.6,
       summary:
       "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team\n of researchers, to find a new planet for humans.",
-      
+      trailer:
+      <a href='https://www.youtube.com/watch?v=zSWdZVtXT7E&pp=ygUUaW50ZXJzdGVsbGFyIHRyYWlsZXI%3D'> Watch Trailer</a>
       },
       {
       name: "Baahubali",
@@ -101,7 +108,8 @@ import Counter from './Counter';
       rating: 7,
       summary:
       "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy.",
-      
+      trailer:
+      <a href='https://www.youtube.com/watch?v=sOEg_YZQsTI&pp=ygUQYmFodWJhbGkgdHJhaWxlcg%3D%3D'> Watch Trailer</a>
       },
       {
       name: "Ratatouille",
@@ -110,7 +118,9 @@ import Counter from './Counter';
       rating: 6.4,
       summary:
       "Remy, a rat, aspires to become a renowned French chef. However, he fails to realise that people despise rodents and will never enjoy a meal cooked by him.",
-      }];
+      trailer:
+      <a href='https://youtu.be/-tNqfcZKn6k'> Watch Trailer</a>
+    }];
 
 // adding more films
 function App(){
@@ -124,7 +134,7 @@ function App(){
         <Toolbar>
         <Button color='inherit' onClick={() => Navigate("/")}>  Home </Button>
         <Button color="inherit" onClick={()=> Navigate("/addmovie")}>Movie</Button>
-        <Button color="inherit" onClick={()=> Navigate("/trailer")}>Trailer</Button>
+        {/* <Button color="inherit" onClick={()=> Navigate("/trailer")}>Trailer</Button> */}
           <Button color="inherit" onClick={()=> Navigate("/colorbox")}>colorbox</Button>
           
         </Toolbar>
@@ -136,7 +146,7 @@ function App(){
   <Route path="/" element={<Welcome/>}/>
   <Route path="/colorbox" element={<ColorBox/>} />
   <Route path="/addmovie" element={<AddMovie/>} />
-  <Route path="/trailer" element={<Trailer/>} />
+  {/* <Route path="/trailer" element={<Trailer/>} /> */}
 
 </Routes>
 
