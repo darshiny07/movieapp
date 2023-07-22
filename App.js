@@ -8,9 +8,10 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Welcome } from './Welcome';
+import Signup from './Signup';
 // import Trailer from './Trailer';
 
-
+ 
 
 // Route import
 import {
@@ -25,7 +26,7 @@ import {
 } from "react-router-dom";
 import { ColorBox } from './ColorBox';
 import Counter from './Counter';
-
+import Sign from './Welcome';
 // first component
 
 
@@ -133,6 +134,7 @@ function App(){
       <AppBar position="static">
         <Toolbar>
         <Button color='inherit' onClick={() => Navigate("/")}>  Home </Button>
+        <Button color="inherit" onClick={()=> Navigate("/signup")}>Signup </Button>
         <Button color="inherit" onClick={()=> Navigate("/addmovie")}>Movie</Button>
         {/* <Button color="inherit" onClick={()=> Navigate("/trailer")}>Trailer</Button> */}
           <Button color="inherit" onClick={()=> Navigate("/colorbox")}>colorbox</Button>
@@ -144,6 +146,7 @@ function App(){
 
            <Routes>
   <Route path="/" element={<Welcome/>}/>
+  <Route path="/signup" element={<Signup/>}/>
   <Route path="/colorbox" element={<ColorBox/>} />
   <Route path="/addmovie" element={<AddMovie/>} />
   {/* <Route path="/trailer" element={<Trailer/>} /> */}

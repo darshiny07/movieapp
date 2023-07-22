@@ -1,0 +1,30 @@
+.ibg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-color: rgba(232, 8, 8, 0.866);
+    background-image :url("https://wallpapercave.com/wp/wp1945909.jpg" );
+}
+
+.heading{
+    /* display: flex;
+    align-items: center; */
+    /* text-align: center; */
+   
+        left: 0;
+        line-height: 200px;
+        margin-top: -100px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 100%;
+  
+}
+
+
+
+
+
+
+
